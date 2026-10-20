@@ -368,7 +368,7 @@ def build(preview=False):
 </div></section>
 <section class="a-sec" style="padding-top:0"><div class="wrap">
   <h2>Find {e(a["name"])}</h2>
-  <div class="contacts" style="margin-top:32px">{links}</div>
+  <div class="contacts" style="margin-top:32px">{links}<div class="contact"><span>Privacy</span><a class="addr" href="../privacy.html#{aid}">How {e(a["name"])} handles your data</a></div></div>
 </div></section>'''
         write(f'apps/{aid}.html', page(f'apps/{aid}.html', a['name'], f'{a["name"]} by Moonshift Studio. {a["tag"]} {a["card"]}', body, 'apps', qr=True, app=aid))
 
@@ -402,22 +402,8 @@ def build(preview=False):
     write('contact.html', page('contact.html', 'Contact', 'Contact Moonshift Studio: general questions, business and press, and app support.', contact))
 
     # ---------- privacy ----------
-    privacy = '''<section class="page-head"><div class="wrap"><h1 class="display">Privacy</h1><p class="lede">Last updated October 20, 2026.</p></div></section>
-<section style="padding-top:12px"><div class="wrap prose">
-<h2>This website</h2>
-<p>moonshiftstudio.com does not use cookies, ads, analytics or tracking. Like most websites, our hosting provider keeps standard server logs (such as IP address and browser type) to keep the site running and secure.</p>
-<h2>The testers list</h2>
-<p>If you join the testers list, we save the email address you give us, the apps you picked, your phone type and the date you signed up. We use it only to send test invites and launch news for those apps. We never sell it or share it for marketing. To be removed, email hello@moonshiftstudio.com and we'll delete your entry.</p>
-<h2>QR codes</h2>
-<p>When you scan a Moonshift QR code, the page checks whether you're on an iPhone or an Android phone so it can open the right app store. That check happens on your phone and nothing is saved.</p>
-<h2>Playing Firefly Dash on this site</h2>
-<p>The game only loads when you tap Play. It runs from fireflydash.moonshiftstudio.com.</p>
-<h2>Our apps</h2>
-<p>Each Moonshift app has its own privacy policy, which will be published here before that app launches.</p>
-<h2>Questions</h2>
-<p>Email hello@moonshiftstudio.com.</p>
-</div></section>'''
-    write('privacy.html', page('privacy.html', 'Privacy', 'How the Moonshift Studio website handles privacy.', privacy))
+    privacy = open(os.path.join(ROOT, 'privacy_body.html')).read()
+    write('privacy.html', page('privacy.html', 'Privacy Policy', 'How Moonshift Studio handles your information on moonshiftstudio.com and in Firefly Dash, Manatable, Unbadged and Nopehook.', privacy, sky=True))
 
     write('404.html', page('404.html', 'Page not found', 'This page does not exist.', '<section class="landing"><div class="wrap"><h1>Lost in the dark</h1><p>That page doesn\'t exist.</p><div class="btns"><a class="btn btn-gold" href="index.html">Back home</a></div></div></section>', noindex=True))
 

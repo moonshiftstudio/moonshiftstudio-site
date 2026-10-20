@@ -420,3 +420,22 @@ body.app .contact .addr { color: var(--a-ink); }
 .play .poster::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,22,38,0) 40%, rgba(11,22,38,.85) 100%); }
 .play .poster > * { position: relative; }
 body.app .nav a.btn, body.app .nav a.btn:hover { color: var(--gold-ink); }
+
+/* Privacy policy */
+.policy { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.toc { position: sticky; top: 100px; font-size: 15px; }
+.toc-title { font-weight: 700; margin-bottom: 10px; }
+.toc ol { margin: 0; padding-left: 20px; display: grid; gap: 7px; color: var(--haze); }
+.toc a { text-decoration: none; color: var(--haze); }
+.toc a:hover { color: var(--moon); text-decoration: underline; }
+.policy .prose { max-width: 72ch; }
+.policy .prose h2 { font-size: clamp(26px, 2.6vw, 34px); margin-top: 34px; scroll-margin-top: 100px; }
+.policy .prose h2:first-child { margin-top: 0; }
+.policy .prose ul { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+.policy .prose b { color: var(--moon); }
+.policy-table { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; }
+.policy-table table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.policy-table th, .policy-table td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); color: #CBD2E0; }
+.policy-table th { color: var(--moon); background: rgba(17,29,54,.7); }
+.policy-table tr:last-child td { border-bottom: 0; }
+@media (max-width: 860px) { .policy { grid-template-columns: minmax(0, 1fr); } .toc { position: static; background: rgba(17,29,54,.6); border: 1px solid var(--line); border-radius: 20px; padding: 18px 20px; } }
