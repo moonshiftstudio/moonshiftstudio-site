@@ -1,0 +1,105 @@
+# Extra content for each app's mini-site. Screenshots: drop images into site/assets/shots/<app>/ with these
+# file names (any phone screenshot, portrait). art.jpg = wide artwork banner. Missing files show a labeled slot.
+EXTRA = {
+ 'nopehook': {
+  'how': 'Three steps, a few seconds',
+  'steps': [
+    ('Paste or snap it', 'Paste a text, email or link, or add a screenshot of the message that feels off.'),
+    ('Nopehook checks it', 'Five checks run on every message: the wording, the links, a weekly-updated scam list, an AI review and fixed safety rules.'),
+    ('Get a clear answer', 'Likely scam, suspicious, or looks fine, with the red flags explained and what to do next.'),
+  ],
+  'shots': [
+    ('01-home.webp', 'Home', 'Paste, snap or forward'),
+    ('02-result.webp', 'The verdict', 'Red flags in plain English'),
+    ('03-email.webp', 'Email forwarding', 'Checks sender and message'),
+    ('04-family.webp', 'Family protection', 'Alerts for loved ones'),
+    ('05-plus.webp', 'Nopehook Plus', 'Unlimited checks'),
+  ],
+  'art': 'Nopehook app screens: the scam verdict, the check screen and family alerts',
+  'feat_head': 'Everything you need to spot a scam',
+  'get_head': 'Coming soon',
+  'get_text': 'Nopehook is in development. Save the QR code now: when the app launches, the same code takes you straight to it.',
+  'faq': [
+    ('Is Nopehook free?', 'Yes. Everyone gets 15 free checks a month for texts, links and screenshots. Nopehook Plus adds email forwarding, family protection and unlimited checks.'),
+    ('Is the verdict always right?', 'No checker is perfect. Every result is a risk assessment, not a guarantee. If something feels off, contact the company directly using a number or website you already trust.'),
+    ('Where does the scam information come from?', 'From public warnings by agencies like the FTC, FBI, U.S. Postal Inspection Service, FCC, IRS and Social Security, plus official bank and carrier pages. The scam list is updated every week.'),
+    ('Will it flag real messages from my bank?', 'Real purchase alerts that only ask you to reply yes or no are marked “Verify it first” instead of “Likely scam”, so you can check them safely.'),
+    ('When does it launch?', 'Nopehook is in development. Follow @nopehook on Instagram for the launch date.'),
+  ],
+ },
+ 'unbadged': {
+  'how': 'Clock in without the name tag',
+  'steps': [
+    ('Get an invite', 'Unbadged is invite-only while in beta. Email hello@unbadged.app to ask for one.'),
+    ('Join anonymously', 'No real names. Pick your job and the boards you care about.'),
+    ('Say what you mean', 'Vent, swap stories, compare pay and schedules, and chat with people who do the same work.'),
+  ],
+  'shots': [
+    ('01-feed.webp', 'The feed', 'Posts from people like you'),
+    ('02-boards.webp', 'Boards', 'By job type and company'),
+    ('03-pay.webp', 'Pay Check', 'What jobs really pay'),
+    ('04-chat.webp', 'Group chats', 'Private and anonymous'),
+    ('05-radio.webp', 'Break Room Radio', 'Free live stations'),
+  ],
+  'art': 'Unbadged app screens: a group chat, the feed and Pay Check',
+  'feat_head': 'A break room that never closes',
+  'get_head': 'Invite-only beta',
+  'get_text': 'Unbadged is open to adults 18+ by invite while in beta. Save the QR code: when the app launches publicly, the same code takes you straight to it.',
+  'faq': [
+    ('Who is Unbadged for?', 'Adults 18 and older who work in retail, warehouses, the trades or service jobs.'),
+    ('Is it really anonymous?', 'You never use your real name, and faces in public photos are blurred automatically before anyone sees them.'),
+    ('How do I get in?', 'Unbadged is invite-only during the beta. Email hello@unbadged.app to ask for an invite.'),
+    ('How do I report a problem?', 'Email reports@unbadged.app with what happened and where in the app you saw it.'),
+  ],
+ },
+ 'firefly-dash': {
+  'how': 'Easy to learn, hard to put down',
+  'steps': [
+    ('Tap to fly', 'One tap lifts your firefly. Thread it through the gaps without touching anything.'),
+    ('Grab the sparks', 'Sparks are rare. Collect them as you fly and push into new worlds.'),
+    ('Power up', 'Spend sparks in the Spark Shop, set your four-ability loadout and go farther next run.'),
+  ],
+  'shots': [
+    ('01-menu.webp', 'Main menu', 'Your firefly, ready to go'),
+    ('02-play.webp', 'In flight', 'One tap to fly'),
+    ('03-world.webp', 'New worlds', 'Ten to reach'),
+    ('04-shop.webp', 'Spark Shop', 'Power-ups and glows'),
+    ('05-loadout.webp', 'Loadout', 'Pick four abilities'),
+  ],
+  'art': 'Firefly Dash screens: in flight, the main menu and the Spark Shop',
+  'feat_head': 'Ten worlds of glowing pixel art',
+  'get_head': 'Play free right now',
+  'get_text': 'Firefly Dash runs in your phone browser, no download needed. Scan the code to start flying, and add it to your home screen to play like an app.',
+  'faq': [
+    ('Is Firefly Dash free?', 'Yes. It is free to play in your phone browser.'),
+    ('Do I need to download anything?', 'No. Open it in your browser, then use Add to Home Screen to keep it on your phone like an app.'),
+    ('How many worlds are there?', 'Ten, from the Moonlit Swamp at the start to the Heart of Light at 4,200 meters.'),
+    ('Will it be on the App Store and Google Play?', 'Store versions are planned for later. The QR code on this page will take you to them when they are ready.'),
+  ],
+ },
+ 'manatable': {
+  'how': 'From card box to game night',
+  'steps': [
+    ('Scan your cards', 'Point your phone at a card. It reads the name and exact printing and adds it to your collection.'),
+    ('Build and check decks', 'See what you can build from what you own, then get a deep dive and coaching on every deck.'),
+    ('Play game night', 'Track life and commander damage at the table. Every finished game saves to your stats.'),
+  ],
+  'shots': [
+    ('01-life.webp', 'Life counter', 'Two to six players'),
+    ('02-scan.webp', 'Card scanner', 'Reads name and printing'),
+    ('03-deck.webp', 'Deck deep dive', 'Curve, odds and coach'),
+    ('04-stats.webp', 'Game night stats', 'Wins and rivalries'),
+    ('05-collection.webp', 'Collection', 'Value and binders'),
+  ],
+  'art': 'Manatable screens: a deck, the life counter and the collection',
+  'feat_head': 'Everything for Commander night',
+  'get_head': 'In testing',
+  'get_text': 'Manatable is being tested at real game nights. Save the QR code: when it launches, the same code takes you straight to it.',
+  'faq': [
+    ('Is this an official Magic: The Gathering app?', 'No. Manatable is an independent app and is not affiliated with, approved or endorsed by Wizards of the Coast.'),
+    ('How does the scanner work?', 'It reads the card name, set code and collector number with your phone camera, then matches the exact printing so prices are right.'),
+    ('Does it need internet?', 'Card images and prices load online and are saved on your phone, so cards you have already seen still show offline.'),
+    ('When can I get it?', 'Manatable is in testing. Follow @moonshiftstudio on TikTok for the launch.'),
+  ],
+ },
+}

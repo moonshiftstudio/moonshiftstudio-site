@@ -1,0 +1,22 @@
+{
+  "outputDirectory": "site",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/studio",
+      "destination": "/story",
+      "permanent": true
+    },
+    {
+      "source": "/apps/commander-table",
+      "destination": "/apps/manatable",
+      "permanent": true
+    },
+    {
+      "source": "/get/commander-table",
+      "destination": "/get/manatable",
+      "permanent": true
+    }
+  ]
+}
