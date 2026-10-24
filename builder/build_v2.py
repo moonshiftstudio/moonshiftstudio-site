@@ -413,9 +413,16 @@ def build(preview=False):
     write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}/{u}</loc></url>\n' for u in urls) + '</urlset>\n')
 
 build(preview=False)
+# Nox phone monitor (moonshiftstudio.com/nox): a private page, opened with a key from Moonshift HQ
+shutil.copytree(os.path.join(ROOT, 'nox'), os.path.join(OUT, 'nox'))
 # vercel.json belongs at the repo root (it also tells Vercel to serve ./site)
 import json
 _v = json.load(open(os.path.join(OUT, 'vercel.json')))
 os.remove(os.path.join(OUT, 'vercel.json'))
+_v["headers"] = [{"source": "/nox(.*)", "headers": [
+    {"key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://ynwabowujlalbztriqwj.supabase.co; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"},
+    {"key": "Referrer-Policy", "value": "no-referrer"},
+    {"key": "X-Robots-Tag", "value": "noindex, nofollow"},
+    {"key": "Cache-Control", "value": "no-cache"}]}]
 json.dump({"outputDirectory": "site", **_v}, open(os.path.join(ROOT, '..', 'vercel.json'), 'w'), indent=2)
 print('built', sum(len(f) for _, _, f in os.walk(OUT)), 'files')
