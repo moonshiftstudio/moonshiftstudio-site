@@ -11,6 +11,7 @@ OUT = os.path.join(ROOT, '..', 'site')
 SITE = 'https://moonshiftstudio.com'
 QR_LIB = 'https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js'
 FIREFLY_URL = 'https://fireflydash.moonshiftstudio.com'
+MANATABLE_BETA = 'https://manatable.vercel.app/beta.html'
 BY_ID = {a['id']: a for a in APPS}
 STAGE = {'nopehook': 's-nopehook', 'unbadged': 's-unbadged', 'firefly-dash': 's-firefly', 'manatable': 's-commander'}
 
@@ -158,6 +159,7 @@ def stage(a, i, r=''):
     primary = (f'<a class="btn btn-app" href="{FIREFLY_URL}" rel="noopener">Play now</a>' if a['id'] == 'firefly-dash'
                else f'<a class="btn btn-app" href="{r}apps/{a["id"]}.html">Explore {e(a["name"])}</a>')
     second = (f'<a class="btn btn-line" href="{r}apps/{a["id"]}.html">Explore {e(a["name"])}</a>' if a['id'] == 'firefly-dash'
+              else f'<a class="btn btn-line" href="{MANATABLE_BETA}">Join the beta</a>' if a['id'] == 'manatable'
               else f'<a class="btn btn-line" href="{r}join.html">Test it early</a>' if a['id'] != 'unbadged'
               else f'<a class="btn btn-line" href="{r}apps/unbadged.html#get">Ask for an invite</a>')
     return f'''<article class="stage {STAGE[a["id"]]}{' flip' if i % 2 else ''}" id="{a["id"]}">
@@ -315,6 +317,8 @@ def build(preview=False):
         ctas = ''.join(f'<a class="btn {"a-btn" if k == "gold" else "a-line"}" href="{u}" rel="noopener">{e(t)}</a>' for t, u, k in a['cta'])
         if a.get('copy'):
             ctas = f'<button class="btn a-btn" type="button" data-copy="{a["copy"]}">Copy invite email</button>' + ctas
+        elif aid == 'manatable':
+            ctas = f'<a class="btn a-btn" href="{MANATABLE_BETA}">Join the beta</a>' + ctas
         elif aid != 'firefly-dash':
             ctas = f'<a class="btn a-btn" href="../join.html">Test it early</a>' + ctas
         gallery = ''.join(f'<figure>{phone(f"../assets/shots/{aid}/{f}", f"{a['name']}: {t}")}<figcaption>{e(t)}<span>{e(s)}</span></figcaption></figure>' for f, t, s in shots)
