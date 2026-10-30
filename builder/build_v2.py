@@ -208,6 +208,7 @@ def join_block(fid):
   <div>
     <h2 class="big">Try the apps before anyone else.</h2>
     <p class="lede">Join the testers list and get early builds of Nopehook, Manatable and Firefly Dash, or just a heads-up when they launch.</p>
+    <p class="callout"><b>Here for Manatable?</b> It has its own beta sign-up: <a href="{MANATABLE_BETA}">Join the Manatable beta</a>.</p>
     <p class="callout"><b>Android testers needed.</b> Google Play asks new developers for 12 testers who keep an app for 14 days before it can launch. If you have an Android phone, you'd be a big help.</p>
   </div>
   {signup_form(fid)}
