@@ -416,8 +416,8 @@ def build(preview=False):
 
     write('404.html', page('404.html', 'Page not found', 'This page does not exist.', '<section class="landing"><div class="wrap"><h1>Lost in the dark</h1><p>That page doesn\'t exist.</p><div class="btns"><a class="btn btn-gold" href="index.html">Back home</a></div></div></section>', noindex=True))
 
-    write('vercel.json', '{\n  "cleanUrls": true,\n  "trailingSlash": false,\n  "redirects": [\n    { "source": "/studio", "destination": "/story", "permanent": true },\n    { "source": "/apps/commander-table", "destination": "/apps/manatable", "permanent": true },\n    { "source": "/get/commander-table", "destination": "/get/manatable", "permanent": true }\n  ]\n}\n')
-    write('robots.txt', f'User-agent: *\nAllow: /\nDisallow: /get/\nSitemap: {SITE}/sitemap.xml\n')
+    write('vercel.json', '{\n  "cleanUrls": true,\n  "trailingSlash": false,\n  "redirects": [\n    { "source": "/studio", "destination": "/story", "permanent": true },\n    { "source": "/apps/commander-table", "destination": "/apps/manatable", "permanent": true },\n    { "source": "/get/commander-table", "destination": "/get/manatable", "permanent": true },\n    { "source": "/c/:code", "destination": "/get/manatable?c=:code", "permanent": false }\n  ]\n}\n')
+    write('robots.txt', f'User-agent: *\nAllow: /\nDisallow: /get/\nDisallow: /c/\nSitemap: {SITE}/sitemap.xml\n')
     urls = ['', 'story', 'devlog', 'join', 'download', 'contact', 'privacy'] + [f'apps/{a["id"]}' for a in APPS]
     write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}/{u}</loc></url>\n' for u in urls) + '</urlset>\n')
 

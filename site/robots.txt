@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /get/
+Disallow: /c/
 Sitemap: https://moonshiftstudio.com/sitemap.xml

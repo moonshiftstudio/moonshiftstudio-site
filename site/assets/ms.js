@@ -124,6 +124,14 @@ window.MOONSHIFT_SIGNUPS = {
     var target = (p === 'ios' && app.ios) || (p === 'android' && app.android) || '';
     if (!target && !app.ios && !app.android && app.web) target = app.web;
     var msg = $('#landing-msg'), btns = $('#landing-btns');
+    // creator links: moonshiftstudio.com/c/<code> -> /get/manatable?c=<code>. Count the open (code + time only) and pass the code on.
+    var ref = ''; try { ref = (new URLSearchParams(location.search).get('c') || '').toLowerCase(); if (!/^[a-z0-9-]{2,40}$/.test(ref)) ref = ''; } catch (e) {}
+    if (ref && id === 'manatable') {
+      try { fetch('https://oklqtxcochmwadcdgntd.supabase.co/rest/v1/creator_clicks', {method: 'POST', keepalive: true, headers: {apikey: 'sb_publishable_ybqrInSruSzawTFlYEHq9w_VsXTQDak', Authorization: 'Bearer sb_publishable_ybqrInSruSzawTFlYEHq9w_VsXTQDak', 'Content-Type': 'application/json', Prefer: 'return=minimal'}, body: JSON.stringify({code: ref})}); } catch (e) {}
+      var add = function (u, key) { return u ? u + (u.indexOf('?') < 0 ? '?' : '&') + key + '=' + encodeURIComponent(ref) : u; };
+      app = Object.assign({}, app, {beta: add(app.beta, 'c'), ios: add(app.ios, 'ct')});   // App Store campaign links use ct=
+      target = (p === 'ios' && app.ios) || (p === 'android' && app.android) || target;
+    }
     if (!target && !app.ios && !app.android && app.beta) {
       msg.textContent = 'Taking you to the ' + app.name + ' beta sign-up…';
       btns.innerHTML = '<a class="btn btn-gold" href="' + app.beta + '">Join the ' + app.name + ' beta</a><a class="btn btn-ghost" href="../' + app.page + '">About ' + app.name + '</a>';

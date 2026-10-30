@@ -17,6 +17,11 @@
       "source": "/get/commander-table",
       "destination": "/get/manatable",
       "permanent": true
+    },
+    {
+      "source": "/c/:code",
+      "destination": "/get/manatable?c=:code",
+      "permanent": false
     }
   ],
   "headers": [
