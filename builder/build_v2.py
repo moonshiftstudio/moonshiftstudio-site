@@ -63,10 +63,10 @@ APP_FONTS = {
     'nopehook': 'family=Plus+Jakarta+Sans:wght@400;600;700;800',
     'unbadged': 'family=Barlow+Condensed:wght@800&family=Barlow:wght@400;600;700',
     'firefly-dash': 'family=Press+Start+2P',
-    'manatable': 'family=Marcellus&family=Manrope:wght@400;600;700',
+    'manatable': 'family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700',
 }
 BASE_FONTS = 'family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..700&family=Hanken+Grotesk:wght@400..700&family=Michroma'
-HOME_FONTS = BASE_FONTS + '&family=Plus+Jakarta+Sans:wght@800&family=Barlow+Condensed:wght@800&family=Press+Start+2P&family=Marcellus'
+HOME_FONTS = BASE_FONTS + '&family=Plus+Jakarta+Sans:wght@800&family=Barlow+Condensed:wght@800&family=Press+Start+2P&family=Space+Grotesk:wght@600;700'
 
 MOON_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1z"/></svg>'
 MENU_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
@@ -325,6 +325,10 @@ def build(preview=False):
         gallery = ''.join(f'<figure>{phone(f"../assets/shots/{aid}/{f}", f"{a['name']}: {t}")}<figcaption>{e(t)}<span>{e(s)}</span></figcaption></figure>' for f, t, s in shots)
         steps = ''.join(f'<li><h3>{e(t)}</h3><p>{e(d)}</p></li>' for t, d in x['steps'])
         feats = ''.join(f'<div><h3>{e(t)}</h3><p>{e(d)}</p></div>' for t, d in a['features'])
+        o = x.get('orin')
+        orin = (f'''<section class="a-sec orin" style="padding-top:0"><div class="wrap"><div class="orin-box">
+  <div><h2>{e(o["head"])}</h2><p class="sub">{e(o["text"])}</p></div>
+  <div class="orin-poses">''' + ''.join(f'<figure><img src="../assets/img/{f}" alt="Orin the owl: {e(t)}" width="256" height="256" loading="lazy"><figcaption>{e(t)}</figcaption></figure>' for f, t in o['poses']) + '</div>\n</div></div></section>\n') if o else ''
         faq = ''.join(f'<details><summary>{e(q)}</summary><p>{e(ans)}</p></details>' for q, ans in x['faq'])
         links = ''.join(
             f'<div class="contact"><span>{e(k)}</span>' + (f'<a class="addr" href="{u}" rel="noopener">{e(v)}</a>' if u else f'<span class="addr">{e(v)}</span><button class="copy" type="button" data-copy="{e(v)}">Copy</button>') + '</div>'
@@ -347,7 +351,7 @@ def build(preview=False):
   <h2>{e(x["how"])}</h2>
   <ol class="steps">{steps}</ol>
 </div></section>
-<section class="a-sec" style="padding-top:0"><div class="wrap">
+{orin}<section class="a-sec" style="padding-top:0"><div class="wrap">
   <h2>Take a look</h2>
   <div class="gallery" tabindex="0" aria-label="{e(a["name"])} screenshots">{gallery}</div>
 </div></section>

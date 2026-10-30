@@ -11,7 +11,7 @@ ICON = {
  'nopehook': '''<svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" fill="#FFFFFF"/><g transform="translate(-8 -10)"><rect x="112" y="136" width="46" height="240" fill="#10213A"/><polygon points="112,136 170,136 267,262 267,340" fill="#10213A"/><path d="M290 136 V322 A52 52 0 0 0 394 322 V330" fill="none" stroke="#F07020" stroke-width="46"/><polygon points="417,330 417,280 394,234 346,306 371,286 371,330" fill="#F07020"/></g></svg>''',
  'unbadged': '''<svg viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" fill="#161B24"/><g transform="translate(112 160) scale(0.78)"><rect x="24" y="24" width="976" height="650" rx="96" fill="#1F2430" stroke="#E4E9F1" stroke-width="44"/><rect x="56" y="56" width="912" height="214" rx="64" fill="#FF7C30"/><text x="512" y="212" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="800" font-size="150" letter-spacing="10" fill="#161B24">UNBADGED</text><rect x="200" y="430" width="112" height="44" rx="22" fill="#9AA5B4"/><rect x="330" y="430" width="112" height="44" rx="22" fill="#9AA5B4"/><rect x="460" y="430" width="112" height="44" rx="22" fill="#9AA5B4"/><rect x="590" y="430" width="112" height="44" rx="22" fill="#9AA5B4"/><rect x="720" y="430" width="100" height="44" rx="22" fill="#9AA5B4"/></g></svg>''',
  'firefly-dash': None,  # built below
- 'manatable': '''<svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="ctbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#221D14"/><stop offset="1" stop-color="#080706"/></linearGradient><linearGradient id="ctgold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7DE9A"/><stop offset=".5" stop-color="#C9962E"/><stop offset="1" stop-color="#F2CF7A"/></linearGradient></defs><rect width="100" height="100" fill="url(#ctbg)"/><circle cx="50" cy="50" r="33" fill="none" stroke="url(#ctgold)" stroke-width="4"/><circle cx="50" cy="50" r="26" fill="none" stroke="#7D7A73" stroke-width="1"/><circle cx="50" cy="31" r="6" fill="#F3E6BE"/><circle cx="68" cy="44" r="6" fill="#3F86D6"/><circle cx="61" cy="65" r="6" fill="#4A4A4F"/><circle cx="39" cy="65" r="6" fill="#D2463A"/><circle cx="32" cy="44" r="6" fill="#3E9A5B"/></svg>''',
+ 'manatable': '<img src="/assets/img/manatable-icon.webp" alt="" width="256" height="256">',
 }
 FF = ["................",
       "................",
@@ -37,6 +37,20 @@ SOCIAL_ICONS = {
 
 # ---------- content ----------
 APPS = [
+ {'id': 'manatable', 'name': 'Manatable', 'tag': 'Collect, build and battle.', 'status': ('dev', 'Beta'),
+  'card': 'Scan your cards, see what each printing is worth, build decks from what you own and keep score at the table. Orin, the owl, helps along the way.',
+  'lede': 'Manatable brings Commander night into one app: scan your cards with your phone camera, see what every printing is worth, build decks from what you own, and keep life at the table. Orin, the built-in owl, helps along the way.',
+  'features': [
+    ('Camera scanner', 'Point your phone at a card, or a whole stack. It reads the name, the exact printing and whether it is foil, then adds it.'),
+    ('Binders like yours', 'Pages of 2×2, 3×3 or 4×4 pockets that match your real binder. Scan a whole page at once and drag cards between pockets.'),
+    ('What it is worth', 'Every printing has its own price, so a showcase foil is not counted like the plain one. Watch the value move day by day.'),
+    ('Decks from what you own', 'Check off the precons you own, build around any card, and let Orin suggest upgrades from cards you already have.'),
+    ('Life counter', 'Life, commander damage and counters for two to six players, with each seat showing its commander art.'),
+    ('Ask Orin', 'Ask in plain words: cheap green ramp, board wipes I own, what ward means. It works with no signal.'),
+  ],
+  'note': 'Manatable is not affiliated with, approved or endorsed by Wizards of the Coast. Magic: The Gathering is a trademark of Wizards of the Coast LLC.',
+  'cta': [('Follow on TikTok', 'https://tiktok.com/@moonshiftstudio', 'line')],
+  'links': [('TikTok', '@moonshiftstudio', 'https://tiktok.com/@moonshiftstudio'), ('Contact', 'hello@moonshiftstudio.com', None)]},
  {'id': 'nopehook', 'name': 'Nopehook', 'tag': 'Check it before you bite.', 'status': ('dev', 'In development'),
   'card': 'Paste a sketchy text, email, link or screenshot and get a clear answer: likely scam, suspicious, or looks fine, with the red flags explained in plain English.',
   'lede': 'Nopehook is a scam checker for real life. Paste a text, an email, a link or a screenshot, and get a clear verdict with the warning signs spelled out and what to do next. Built for everyone, and especially for families looking out for each other.',
@@ -80,20 +94,6 @@ APPS = [
   'note': 'Firefly Dash is free to play in your phone browser now. App Store and Google Play versions come later.',
   'cta': [('Play now', 'https://fireflydash.moonshiftstudio.com', 'gold')],
   'links': [('Play', 'fireflydash.moonshiftstudio.com', 'https://fireflydash.moonshiftstudio.com'), ('TikTok', '@moonshiftstudio', 'https://tiktok.com/@moonshiftstudio'), ('Support', 'hello@moonshiftstudio.com', None)]},
- {'id': 'manatable', 'name': 'Manatable', 'tag': 'Collect, build and battle.', 'status': ('dev', 'In testing'),
-  'card': 'Scan your cards, track life and commander damage, and see which decks you can build from what you already own.',
-  'lede': 'Manatable brings a Commander game night into one app: scan your collection with your phone camera, keep life and commander damage, save every game, and dig into your decks.',
-  'features': [
-    ('Camera scanner', 'Point your phone at a card and it reads the name and printing, then adds it to your collection.'),
-    ('Life counter', 'Life, commander damage and counters for two to six players, with each seat showing its commander.'),
-    ('Game night stats', 'Finished games save automatically, with win rates, favorite commanders and rivalries.'),
-    ('Deck deep dive', 'Card types, mana curve, draw odds and a coach that suggests swaps and cards to add.'),
-    ('Build from what you own', 'Find commanders you can build from cards already in your collection, and what it costs to finish.'),
-    ('Collection value', 'See what your cards are worth, spot valuable cards sitting in bulk, and watch prices.'),
-  ],
-  'note': 'Manatable is not affiliated with, approved or endorsed by Wizards of the Coast. Magic: The Gathering is a trademark of Wizards of the Coast LLC.',
-  'cta': [('Follow on TikTok', 'https://tiktok.com/@moonshiftstudio', 'line')],
-  'links': [('TikTok', '@moonshiftstudio', 'https://tiktok.com/@moonshiftstudio'), ('Contact', 'hello@moonshiftstudio.com', None)]},
 ]
 SOCIALS = [('instagram', 'Instagram', '@moonshiftstudio', 'https://instagram.com/moonshiftstudio'),
            ('tiktok', 'TikTok', '@moonshiftstudio', 'https://tiktok.com/@moonshiftstudio'),
