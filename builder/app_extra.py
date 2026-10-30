@@ -94,7 +94,7 @@ EXTRA = {
   'art': 'Manatable screens: a deck, the life counter and the collection',
   'feat_head': 'Everything for Commander night',
   'get_head': 'In testing',
-  'get_text': 'Manatable is being tested at real game nights. Save the QR code: when it launches, the same code takes you straight to it.',
+  'get_text': 'Manatable is being tested at real game nights. Scan the QR code to ask for a beta spot. When it launches, the same code takes you straight to the app.',
   'faq': [
     ('Is this an official Magic: The Gathering app?', 'No. Manatable is an independent app and is not affiliated with, approved or endorsed by Wizards of the Coast.'),
     ('How does the scanner work?', 'It reads the card name, set code and collector number with your phone camera, then matches the exact printing so prices are right.'),

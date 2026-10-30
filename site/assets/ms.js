@@ -29,7 +29,8 @@ window.MOONSHIFT_APPS = {
   'manatable': {
     name: 'Manatable', page: 'apps/manatable.html',
     ios: '', android: '', web: '',
-    soon: 'Manatable is in testing. Join the testers list to try it early.'
+    beta: 'https://manatable.vercel.app/beta.html',   // until a store link is filled in, the QR code opens the beta sign-up
+    soon: 'Manatable is in testing. Ask to join the beta to try it early.'
   }
 };
 
@@ -123,6 +124,12 @@ window.MOONSHIFT_SIGNUPS = {
     var target = (p === 'ios' && app.ios) || (p === 'android' && app.android) || '';
     if (!target && !app.ios && !app.android && app.web) target = app.web;
     var msg = $('#landing-msg'), btns = $('#landing-btns');
+    if (!target && !app.ios && !app.android && app.beta) {
+      msg.textContent = 'Taking you to the ' + app.name + ' beta sign-up…';
+      btns.innerHTML = '<a class="btn btn-gold" href="' + app.beta + '">Join the ' + app.name + ' beta</a><a class="btn btn-ghost" href="../' + app.page + '">About ' + app.name + '</a>';
+      setTimeout(function () { location.replace(app.beta); }, 600);
+      return;
+    }
     if (target) {
       msg.textContent = 'Taking you to ' + app.name + '…';
       btns.innerHTML = '<a class="btn btn-gold" href="' + target + '">Open ' + app.name + '</a>';
