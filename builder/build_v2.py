@@ -136,7 +136,7 @@ def page(path, title, desc, body, current='', qr=False, noindex=False, app=None,
     <div><h4>Studio</h4><ul><li><a href="{r}story.html">Story</a></li><li><a href="{r}devlog.html">Devlog</a></li><li><a href="{r}join.html">Join the testers</a></li><li><a href="{r}download.html">Download</a></li><li><a href="{r}contact.html">Contact</a></li><li><a href="{r}privacy.html">Privacy</a></li></ul></div>
     <div><h4>Follow</h4><ul>{follow}</ul></div>
   </div>
-  <p class="legal">© 2026 Moonshift Studio. Magic: The Gathering is a trademark of Wizards of the Coast LLC. Manatable is not affiliated with, approved or endorsed by Wizards of the Coast.</p>
+  <p class="legal">© 2026 Moonshift Studio. Manatable is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. Magic: The Gathering is a trademark of Wizards of the Coast LLC.</p>
 </div></footer>
 {f'<script src="{QR_LIB}"></script>' if qr else ''}
 <script src="{r}assets/ms.js"></script>

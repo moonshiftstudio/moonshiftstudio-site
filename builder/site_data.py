@@ -48,7 +48,7 @@ APPS = [
     ('Life counter', 'Life, commander damage and counters for two to six players, with each seat showing its commander art.'),
     ('Ask Orin', 'Ask in plain words: cheap green ramp, board wipes I own, what ward means. It works with no signal.'),
   ],
-  'note': 'Manatable is not affiliated with, approved or endorsed by Wizards of the Coast. Magic: The Gathering is a trademark of Wizards of the Coast LLC.',
+  'note': 'Manatable is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. Magic: The Gathering is a trademark of Wizards of the Coast LLC.',
   'cta': [('Follow on TikTok', 'https://tiktok.com/@moonshiftstudio', 'line')],
   'links': [('TikTok', '@moonshiftstudio', 'https://tiktok.com/@moonshiftstudio'), ('Contact', 'hello@moonshiftstudio.com', None)]},
  {'id': 'nopehook', 'name': 'Nopehook', 'tag': 'Check it before you bite.', 'status': ('dev', 'In development'),
