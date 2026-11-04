@@ -38,15 +38,15 @@ SOCIAL_ICONS = {
 # ---------- content ----------
 APPS = [
  {'id': 'manatable', 'name': 'Manatable', 'tag': 'Collect, build and battle.', 'status': ('dev', 'Beta'),
-  'card': 'Scan your cards, see what each printing is worth, build decks from what you own and keep score at the table. Orin, the owl, helps along the way.',
-  'lede': 'Manatable brings Commander night into one app: scan your cards with your phone camera, see what every printing is worth, build decks from what you own, and keep life at the table. Orin, the built-in owl, helps along the way.',
+  'card': 'Scan your cards, see what each printing is worth, build decks from what you own and keep score at the table.',
+  'lede': 'Manatable brings Commander night into one app: scan your cards with your phone camera, see what every printing is worth, build decks from what you own, and keep life at the table.',
   'features': [
     ('Camera scanner', 'Point your phone at a card, or a whole stack. It reads the name, the exact printing and whether it is foil, then adds it.'),
     ('Binders like yours', 'Pages of 2×2, 3×3 or 4×4 pockets that match your real binder. Scan a whole page at once and drag cards between pockets.'),
     ('What it is worth', 'Every printing has its own price, so a showcase foil is not counted like the plain one. Watch the value move day by day.'),
-    ('Decks from what you own', 'Check off the precons you own, build around any card, and let Orin suggest upgrades from cards you already have.'),
+    ('Decks from what you own', 'Check off the precons you own, build around any card, and get upgrade ideas from cards you already have.'),
     ('Life counter', 'Life, commander damage and counters for two to six players, with each seat showing its commander art.'),
-    ('Ask Orin', 'Ask in plain words: cheap green ramp, board wipes I own, what ward means. It works with no signal.'),
+    ('Ask in plain words', 'Tap Ask on Home: cheap green ramp, board wipes I own, what ward means. It works with no signal.'),
   ],
   'note': 'Manatable is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. Magic: The Gathering is a trademark of Wizards of the Coast LLC.',
   'cta': [('Follow on TikTok', 'https://tiktok.com/@moonshiftstudio', 'line')],
