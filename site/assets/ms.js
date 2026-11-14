@@ -138,6 +138,21 @@ window.MOONSHIFT_SIGNUPS = {
       setTimeout(function () { location.replace(app.beta); }, 600);
       return;
     }
+    // TikTok, Instagram and other apps open links in their own browser, which can't open the App Store
+    // ("Action can't be completed", Nov 14). There: no automatic jump, just how to get to Safari or Chrome, plus the link to copy.
+    var inApp = /musical_ly|BytedanceWebview|TikTok|Instagram|FBAN|FBAV|FB_IAB|Snapchat|LinkedInApp|Pinterest|Twitter/i.test(navigator.userAgent || '');
+    if (inApp && (app.ios || app.android)) {
+      var appName = /musical_ly|Bytedance|TikTok/i.test(navigator.userAgent) ? 'TikTok' : /Instagram/i.test(navigator.userAgent) ? 'Instagram' : /FBAN|FBAV|FB_IAB/i.test(navigator.userAgent) ? 'Facebook' : 'This app';
+      msg.innerHTML = appName + '’s browser can’t open the ' + (p === 'android' ? 'Play Store' : 'App Store') + '. Tap <b>•••</b> at the top right, then <b>Open in browser</b>' + (p === 'ios' ? ' (Safari)' : '') + '.';
+      var link = target || app.ios || app.android;
+      btns.innerHTML = '<a class="btn btn-gold" href="' + link + '">Try the ' + (p === 'android' && app.android ? 'Play Store' : 'App Store') + '</a><button class="btn btn-ghost" type="button" data-copy>Copy the link</button><a class="btn btn-ghost" href="../' + app.page + '">About ' + app.name + '</a>';
+      var cb = $('[data-copy]', btns); if (cb) cb.addEventListener('click', function () {
+        var done = function () { cb.textContent = 'Copied: paste it in Safari'; };
+        var url = location.origin + location.pathname;
+        try { navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); }); } catch (e) { window.prompt('Copy this link:', url); }
+      });
+      return;
+    }
     if (target) {
       msg.textContent = 'Taking you to ' + app.name + '…';
       btns.innerHTML = '<a class="btn btn-gold" href="' + target + '">Open ' + app.name + '</a>';
