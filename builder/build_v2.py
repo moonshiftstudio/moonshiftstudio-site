@@ -12,6 +12,7 @@ SITE = 'https://moonshiftstudio.com'
 QR_LIB = 'https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js'
 FIREFLY_URL = 'https://fireflydash.moonshiftstudio.com'
 MANATABLE_BETA = 'https://manatable.vercel.app/beta.html'
+MANATABLE_STORE = 'https://apps.apple.com/app/manatable/id6826528665'   # on the App Store since Nov 13, 2026
 BY_ID = {a['id']: a for a in APPS}
 STAGE = {'nopehook': 's-nopehook', 'unbadged': 's-unbadged', 'firefly-dash': 's-firefly', 'manatable': 's-commander'}
 
@@ -36,6 +37,8 @@ PRINCIPLES = [
 ]
 
 DEVLOG = [  # newest first: (date label, ISO date, title, text, tags)
+    ('Nov 13, 2026', '2026-11-13', 'Manatable 1.0 is out',
+     'Manatable is free on the App Store for iPhone: a card scanner that catches foils, your collection with prices, a Commander deck builder, a life counter for game night, and Magic news with every set coming out.', ['manatable']),
     ('Oct 20, 2026', '2026-10-20', 'New studio site and a testers list',
      'moonshiftstudio.com got a full redesign, with a page for every app, this devlog, and a sign-up list for anyone who wants to test apps before launch.', ['studio']),
     ('Oct 19, 2026', '2026-10-19', 'Manatable goes to game night',
@@ -51,11 +54,10 @@ DEVLOG = [  # newest first: (date label, ISO date, title, text, tags)
 ]
 ROADMAP = [
     ('Now', [('nopehook', 'Building the app from the prototype'), ('unbadged', 'Invite-only beta'),
-             ('firefly-dash', 'Free to play in your browser'), ('manatable', 'Testing at game nights')]),
-    ('Next', [('nopehook', 'Closed test with the testers list'), ('manatable', 'Open test on phones'),
+             ('firefly-dash', 'Free to play in your browser'), ('manatable', 'Out now on the App Store')]),
+    ('Next', [('nopehook', 'Closed test with the testers list'), ('manatable', 'Updates from player feedback'),
               ('firefly-dash', 'App Store and Google Play versions')]),
-    ('Later', [('nopehook', 'Launch on the App Store and Google Play'), ('unbadged', 'Public launch'),
-               ('manatable', 'Launch on the App Store and Google Play')]),
+    ('Later', [('nopehook', 'Launch on the App Store and Google Play'), ('unbadged', 'Public launch')]),
 ]
 TAG_NAMES = {'studio': 'Studio', **{a['id']: a['name'] for a in APPS}}
 
@@ -159,7 +161,7 @@ def stage(a, i, r=''):
     primary = (f'<a class="btn btn-app" href="{FIREFLY_URL}" rel="noopener">Play now</a>' if a['id'] == 'firefly-dash'
                else f'<a class="btn btn-app" href="{r}apps/{a["id"]}.html">Explore {e(a["name"])}</a>')
     second = (f'<a class="btn btn-line" href="{r}apps/{a["id"]}.html">Explore {e(a["name"])}</a>' if a['id'] == 'firefly-dash'
-              else f'<a class="btn btn-line" href="{MANATABLE_BETA}">Join the beta</a>' if a['id'] == 'manatable'
+              else f'<a class="btn btn-line" href="{MANATABLE_STORE}" rel="noopener">Get it on the App Store</a>' if a['id'] == 'manatable'
               else f'<a class="btn btn-line" href="{r}join.html">Test it early</a>' if a['id'] != 'unbadged'
               else f'<a class="btn btn-line" href="{r}apps/unbadged.html#get">Ask for an invite</a>')
     return f'''<article class="stage {STAGE[a["id"]]}{' flip' if i % 2 else ''}" id="{a["id"]}">
@@ -208,7 +210,7 @@ def join_block(fid):
   <div>
     <h2 class="big">Try the apps before anyone else.</h2>
     <p class="lede">Join the testers list and get early builds of Nopehook, Manatable and Firefly Dash, or just a heads-up when they launch.</p>
-    <p class="callout"><b>Here for Manatable?</b> It has its own beta sign-up: <a href="{MANATABLE_BETA}">Join the Manatable beta</a>.</p>
+    <p class="callout"><b>Here for Manatable?</b> It's out now: <a href="{MANATABLE_STORE}" rel="noopener">get it on the App Store</a>.</p>
     <p class="callout"><b>Android testers needed.</b> Google Play asks new developers for 12 testers who keep an app for 14 days before it can launch. If you have an Android phone, you'd be a big help.</p>
   </div>
   {signup_form(fid)}
@@ -319,7 +321,7 @@ def build(preview=False):
         if a.get('copy'):
             ctas = f'<button class="btn a-btn" type="button" data-copy="{a["copy"]}">Copy invite email</button>' + ctas
         elif aid == 'manatable':
-            ctas = f'<a class="btn a-btn" href="{MANATABLE_BETA}">Join the beta</a>' + ctas
+            ctas = f'<a class="btn a-btn" href="{MANATABLE_STORE}" rel="noopener">Get it on the App Store</a>' + ctas
         elif aid != 'firefly-dash':
             ctas = f'<a class="btn a-btn" href="../join.html">Test it early</a>' + ctas
         gallery = ''.join(f'<figure>{phone(f"../assets/shots/{aid}/{f}", f"{a['name']}: {t}")}<figcaption>{e(t)}<span>{e(s)}</span></figcaption></figure>' for f, t, s in shots)

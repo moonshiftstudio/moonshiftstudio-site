@@ -28,9 +28,9 @@ window.MOONSHIFT_APPS = {
   },
   'manatable': {
     name: 'Manatable', page: 'apps/manatable.html',
-    ios: '', android: '', web: '',
-    beta: 'https://manatable.vercel.app/beta.html',   // until a store link is filled in, the QR code opens the beta sign-up
-    soon: 'Manatable is in testing. Ask to join the beta to try it early.'
+    ios: 'https://apps.apple.com/app/manatable/id6826528665', android: '', web: 'https://manatable.vercel.app',   // on the App Store since Nov 13, 2026
+    beta: 'https://manatable.vercel.app/beta.html',
+    soon: 'Manatable is free on the App Store for iPhone.'
   }
 };
 

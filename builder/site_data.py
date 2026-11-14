@@ -37,7 +37,7 @@ SOCIAL_ICONS = {
 
 # ---------- content ----------
 APPS = [
- {'id': 'manatable', 'name': 'Manatable', 'tag': 'Collect, build and battle.', 'status': ('dev', 'Beta'),
+ {'id': 'manatable', 'name': 'Manatable', 'tag': 'Collect, build and battle.', 'status': ('live', 'Out now'),
   'card': 'Scan your cards, see what each printing is worth, build decks from what you own and keep score at the table.',
   'lede': 'Manatable brings Commander night into one app: scan your cards with your phone camera, see what every printing is worth, build decks from what you own, and keep life at the table.',
   'features': [
